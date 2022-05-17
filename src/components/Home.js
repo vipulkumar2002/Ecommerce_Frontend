@@ -10,7 +10,7 @@ import {
   Icon,
   IconButton,
   createIcon,
-  //   IconProps,
+  IconProps,
   useColorModeValue,
 } from "@chakra-ui/react";
 
@@ -39,11 +39,11 @@ const Home = () => {
                 position: "absolute",
                 bottom: 1,
                 left: 0,
-                bg: "red.400",
+                bg: "yellow.400",
                 zIndex: -1,
               }}
             >
-              Write once,
+              TECH-Com,
             </Text>
             <br />
             <Text as={"span"} color={"red.400"}>
@@ -65,10 +65,10 @@ const Home = () => {
               fontWeight={"normal"}
               px={6}
               colorScheme={"red"}
-              bg={"red.400"}
+              bg={"yellow.400"}
               _hover={{ bg: "red.500" }}
             >
-              Get started
+              Shop Now
             </Button>
             <Button
               rounded={"full"}
