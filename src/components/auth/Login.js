@@ -12,25 +12,20 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import axios from "axios";
 import { useState } from "react";
-
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router";
+import { loginUser } from "../../redux/actions/auth";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const loginUser = async () => {
-    try {
-      const res = await axios.post("http://localhost:8080/user/login", {
-        email,
-        password,
-      });
-      console.log(res.data);
-      console.log({ email, password });
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
+  const dispatch = useDispatch();
+  const login = () => dispatch(loginUser(email, password));
+
+  const auth = useSelector((state) => state.auth);
+  const navigate = useNavigate();
+  if (auth.token) navigate("/");
   return (
     <Flex
       minH={"100vh"}
@@ -74,7 +69,7 @@ const Login = () => {
                 {/* <Link color={"blue.400"}>Forgot password?</Link> */}
               </Stack>
               <Button
-                onClick={loginUser}
+                onClick={login}
                 bg={"red.400"}
                 color={"white"}
                 _hover={{

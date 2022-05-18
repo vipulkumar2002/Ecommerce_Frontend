@@ -6,7 +6,6 @@ import thunk from "redux-thunk";
 const initialState = {};
 
 /* Create Store */
-// const middleware =[thank]
 
 const store = createStore(
   rootReducer,
