@@ -66,14 +66,14 @@ const Signup = () => {
               <InputGroup>
                 <Input type={showPassword ? "text" : "password"} />
                 <InputRightElement h={"full"}>
-                  <Button
+                  {/* <Button
                     variant={"ghost"}
                     onClick={() =>
                       setShowPassword((showPassword) => !showPassword)
                     }
                   >
-                    {/* {showPassword ? <ViewIcon /> : <ViewOffIcon />} */}
-                  </Button>
+                    {showPassword ? <ViewIcon /> : <ViewOffIcon />}
+                  </Button> */}
                 </InputRightElement>
               </InputGroup>
             </FormControl>
@@ -92,7 +92,10 @@ const Signup = () => {
             </Stack>
             <Stack pt={6}>
               <Text align={"center"}>
-                Already a user? <Link color={"blue.400"}>Login</Link>
+                Already a user?{" "}
+                <Link to="/login" color={"blue.400"}>
+                  Login
+                </Link>
               </Text>
             </Stack>
           </Stack>
